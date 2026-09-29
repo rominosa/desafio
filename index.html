@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Misión: Desafío Científico v2</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div><span class="tag">MISIÓN</span> DESAFÍO CIENTÍFICO</div>
+    <div id="timer">00:00</div>
+  </header>
+
+  <main>
+    <section id="home" class="screen active">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">APRENDER · EXPLORAR · SUPERAR DESAFÍOS</p>
+          <h1>Entrá al laboratorio de las grandes ideas.</h1>
+          <p>Elegí un personaje, descubrí su historia, observá imágenes científicas y resolvé desafíos. Cada respuesta correcta desbloquea el siguiente nivel.</p>
+          <button class="primary" onclick="showCharacters()">COMENZAR MISIÓN →</button>
+        </div>
+        <div class="hero-orbit"><span>⚛</span><span>🧪</span><span>⚖</span></div>
+      </div>
+    </section>
+
+    <section id="characters" class="screen">
+      <h2>Elegí tu misión</h2>
+      <p class="muted">Tres personajes, tres formas de acercarte a la ciencia.</p>
+      <div id="characterGrid" class="characters"></div>
+    </section>
+
+    <section id="game" class="screen">
+      <div class="mission-head">
+        <div>
+          <span id="levelBadge" class="tag"></span>
+          <h2 id="missionTitle"></h2>
+        </div>
+        <div class="scorebox">PUNTAJE <strong id="score">0</strong></div>
+      </div>
+
+      <div class="character-panel">
+        <img id="characterPhoto" alt="">
+        <div class="dialogue">
+          <div id="speaker"></div>
+          <p id="dialogueText"></p>
+          <button class="small" onclick="speakCurrent()">🔊 Escuchar</button>
+        </div>
+      </div>
+
+      <div id="learningCard" class="learning-card"></div>
+
+      <div class="visual-card">
+        <img id="topicImage" alt="Imagen relacionada con el tema">
+        <div>
+          <span class="tag">OBSERVÁ</span>
+          <p id="observation"></p>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h3 id="question"></h3>
+        <div id="options" class="options"></div>
+        <div id="feedback"></div>
+      </div>
+    </section>
+
+    <section id="final" class="screen">
+      <div class="final-card">
+        <div class="trophy">🏆</div>
+        <h1>DESAFÍO COMPLETADO</h1>
+        <p id="finalScientist"></p>
+        <div class="stats">
+          <div><strong id="finalPassed">0</strong><span>desafíos superados</span></div>
+          <div><strong id="finalScore">0</strong><span>puntos</span></div>
+          <div><strong id="finalTime">00:00</strong><span>tiempo</span></div>
+        </div>
+        <div id="finalMessage" class="final-message"></div>
+        <button class="primary" onclick="location.reload()">VOLVER A JUGAR</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Misión: Desafío Científico · versión educativa</span>
+    <span>Fotos históricas: Wikimedia Commons · ver créditos en README</span>
+  </footer>
+</div>
+<script src="js/preguntas.js"></script>
+<script src="js/juego.js"></script>
+</body>
+</html>
